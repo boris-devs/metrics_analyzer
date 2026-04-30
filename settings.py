@@ -1,5 +1,5 @@
-import os
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = Path(__file__).resolve().parent
 
-METRICS_FILES_PATH = os.path.join(BASE_DIR, "metrics")
+METRICS_FILES_PATH = BASE_DIR / "metrics"
