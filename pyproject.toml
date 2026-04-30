@@ -1,0 +1,11 @@
+[project]
+name = "metrics-analyzer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pytest>=9.0.3",
+    "ruff>=0.15.12",
+    "tabulate>=0.10.0",
+]
