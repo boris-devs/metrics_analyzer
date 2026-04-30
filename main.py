@@ -1,4 +1,5 @@
 import argparse
+
 from reports.clickbait import ClickbaitReportCsv
 
 

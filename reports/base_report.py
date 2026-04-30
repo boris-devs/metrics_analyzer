@@ -19,6 +19,7 @@ class BaseReportCsv(ABC):
 	:ivar files_path: List of file paths to be processed for the report.
 	:type files_path: list
 	"""
+
 	def __init__(self, files_path: list):
 		self.files_path = files_path
 
@@ -49,7 +50,6 @@ class BaseReportCsv(ABC):
 
 	def grid_format_report(self, data: list[dict]):
 		return tabulate(data, headers="keys", tablefmt="grid")
-
 
 	@abstractmethod
 	def filter_logic(self, row: dict):
