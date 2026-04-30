@@ -1,4 +1,7 @@
 import csv
+
+from tabulate import tabulate
+
 from settings import METRICS_FILES_PATH
 
 
@@ -18,7 +21,10 @@ class ClickbaitReportCsv:
 			all_report_data.extend(self.processing_file(file))
 
 		all_report_data.sort(key=lambda x: x['ctr'], reverse=True)
-		return all_report_data
+		return self.grid_format_report(all_report_data)
+
+	def grid_format_report(self, data: list[dict]):
+		return tabulate(data, headers="keys", tablefmt="grid")
 
 	def processing_file(self, file: str):
 		processed_rows = []
