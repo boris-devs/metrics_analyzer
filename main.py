@@ -32,14 +32,14 @@ def main():
 	report_class = reports_map.get(type_report, None)
 	if report_class is None:
 		print("Invalid report type")
+		return
 
 	try:
 		report_instance = report_class(files)
 		print(report_instance.generate_report())
-	except FileNotFoundError as e:
-		print(f"File Error: {e}")
 	except Exception as e:
 		print(f"Something went wrong during parsing: {e}")
+		return
 
 
 if __name__ == "__main__":
