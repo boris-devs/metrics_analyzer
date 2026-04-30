@@ -7,6 +7,18 @@ from settings import METRICS_FILES_PATH
 
 
 class BaseReportCsv(ABC):
+	"""
+	Base class for generating CSV-based reports.
+
+	This abstract base class provides functionality to process multiple CSV files,
+	filter data based on custom criteria, and generate formatted reports.
+
+	The class requires concrete implementations to define specific filtering
+	logic for processing row-level data in CSV files.
+
+	:ivar files_path: List of file paths to be processed for the report.
+	:type files_path: list
+	"""
 	def __init__(self, files_path: list):
 		self.files_path = files_path
 

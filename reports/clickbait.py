@@ -2,7 +2,14 @@ from reports.base_report import BaseReportCsv
 
 
 class ClickbaitReportCsv(BaseReportCsv):
+	"""
+	Provides logic for filtering clickbait report data based on specified thresholds.
 
+	This class inherits from BaseReportCsv and provides a specific filtering mechanism for
+	rows of data that meet certain criteria related to click-through rate (CTR) and
+	retention rate. If the conditions are met, it extracts and returns relevant fields
+	from the data row. Otherwise, it discards the row.
+	"""
 	def filter_logic(self, row: dict):
 		try:
 			ctr = float(row.get("ctr", 0))
